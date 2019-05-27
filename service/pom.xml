@@ -8,16 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service</artifactId>
     <packaging>pom</packaging>
-
-    <artifactId>common</artifactId>
-
     <modules>
-        <module>common-dao</module>
-        <module>user-dao</module>
-        <module>common-entity</module>
-        <module>common-service</module>
-        <module>base-dao</module>
+        <module>shop-user</module>
     </modules>
 
 

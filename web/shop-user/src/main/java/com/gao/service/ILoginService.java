@@ -14,4 +14,6 @@ public interface ILoginService {
     Result<UserVO> login(User user);
 
     Result<UserVO> logout(String token);
+
+    Result register(User user);
 }

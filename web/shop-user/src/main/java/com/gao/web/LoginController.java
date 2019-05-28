@@ -30,6 +30,7 @@ public class LoginController {
         logger.info(po.getUsername() +" " + po.getPassword());
         return loginService.login(po);
     }
+
     @GetMapping("/logout")
     @ResponseBody
     public Result logout(HttpServletRequest request){
@@ -37,11 +38,10 @@ public class LoginController {
         return loginService.logout(token);
     }
 
-    @GetMapping("/noAuthority")
-    @ResponseBody
-    public Result noAuthority(){
-        return ResultFactory.getDefaultResult(ResultEnum.UNAUTHORIZED);
+    @PostMapping("/register")
+    public Result register(@RequestBody User po){
+        logger.info(po.getUsername() +" " + po.getPassword());
+        return loginService.register(po);
     }
-
 
 }

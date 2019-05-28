@@ -17,6 +17,7 @@
         <module>common-user</module>
         <module>common-entity</module>
         <module>common-base</module>
+        <module>common-web</module>
     </modules>
 
 

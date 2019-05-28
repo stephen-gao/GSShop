@@ -41,7 +41,7 @@
 
 		<dependency>
 			<groupId>com.gao</groupId>
-			<artifactId>service-redis</artifactId>
+			<artifactId>common-web</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 

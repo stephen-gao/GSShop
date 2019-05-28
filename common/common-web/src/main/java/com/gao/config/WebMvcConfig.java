@@ -26,7 +26,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         interceptorRegistration.addPathPatterns("/logout");
         interceptorRegistration.excludePathPatterns("/login");
         interceptorRegistration.excludePathPatterns("/noAuthority");
-        interceptorRegistration.excludePathPatterns("/user/add");
+        interceptorRegistration.excludePathPatterns("/register");
     }
 
     @Override

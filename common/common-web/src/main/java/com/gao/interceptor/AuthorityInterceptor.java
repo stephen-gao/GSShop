@@ -29,6 +29,9 @@ public class AuthorityInterceptor implements HandlerInterceptor {
     @Autowired
     ICache cache;
 
+    @Value("${server.servlet.context-path}")
+    private String contextPath;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.warn("AuthorityInterceptor拦截器");
@@ -42,7 +45,7 @@ public class AuthorityInterceptor implements HandlerInterceptor {
             }
         }
         logger.warn("无权限");
-        response.sendRedirect("noAuthority");
+        response.sendRedirect(contextPath+"/noAuthority");
         return false;
     }
 

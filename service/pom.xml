@@ -12,7 +12,8 @@
     <artifactId>service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>shop-user</module>
+        <module>service-user</module>
+        <module>service-redis</module>
     </modules>
 
 

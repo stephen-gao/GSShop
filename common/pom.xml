@@ -14,10 +14,9 @@
 
     <modules>
         <module>common-dao</module>
-        <module>user-dao</module>
+        <module>common-user</module>
         <module>common-entity</module>
-        <module>common-service</module>
-        <module>base-dao</module>
+        <module>common-base</module>
     </modules>
 
 

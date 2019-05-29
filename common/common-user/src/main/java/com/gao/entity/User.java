@@ -4,6 +4,7 @@ package com.gao.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ import java.math.BigDecimal;
  * @author gaosheng
  * @since 2019-05-27
  */
+@TableName("t_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

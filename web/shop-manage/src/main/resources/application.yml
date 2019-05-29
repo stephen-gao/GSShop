@@ -1,8 +1,8 @@
 # 修改tomcat的默认的端口号
 server:
-  port: 8892
+  port: 8893
   servlet:
-    context-path: /gsshop
+    context-path: /shopmanage
 
 # 多环境配置文件激活属性
 spring:
@@ -32,7 +32,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
-redis:
-  cache:
-    user:
-      key: user_token_
+#redis:
+#  cache:
+#    user:
+#      key: user_token_

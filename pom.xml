@@ -77,7 +77,14 @@
                         <superServiceClass>com.baomidou.mybatisplus.extension.service.IService</superServiceClass>
                         <!-- 要包含的表 与exclude 二选一配置-->
                         <include>
-                            <property>user</property>
+                            <property>t_brand</property>
+                            <property>t_category</property>
+                            <property>t_sku</property>
+                            <property>t_sku_spec</property>
+                            <property>t_spec_tree</property>
+                            <property>t_spu</property>
+                            <property>t_spu_group</property>
+                            <property>t_spu_group_spec</property>
                         </include>
                         <!-- 要排除的表 -->
                         <!--<exclude>-->

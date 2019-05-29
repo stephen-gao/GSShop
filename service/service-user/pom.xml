@@ -16,7 +16,7 @@
 
         <dependency>
             <groupId>com.gao</groupId>
-            <artifactId>common-user</artifactId>
+            <artifactId>common-dao</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

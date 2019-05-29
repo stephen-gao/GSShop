@@ -1,7 +1,7 @@
 package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.dao.SkuSpecMapper;
+import com.gao.mapper.SkuSpecMapper;
 import com.gao.entity.po.SkuSpec;
 import com.gao.service.ISkuSpecService;
 import org.springframework.stereotype.Service;

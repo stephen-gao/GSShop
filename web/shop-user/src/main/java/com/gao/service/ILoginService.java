@@ -1,7 +1,7 @@
 package com.gao.service;
 
 import com.gao.base.result.Result;
-import com.gao.entity.User;
+import com.gao.entity.po.User;
 import com.gao.entity.vo.UserVO;
 
 /**

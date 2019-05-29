@@ -2,8 +2,8 @@ package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.entity.User;
-import com.gao.dao.UserMapper;
+import com.gao.entity.po.User;
+import com.gao.mapper.UserMapper;
 import com.gao.service.IUserService;
 import org.springframework.stereotype.Service;
 

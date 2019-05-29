@@ -1,4 +1,4 @@
-package com.gao.entity;
+package com.gao.entity.po;
 
 
 import com.baomidou.mybatisplus.annotation.IdType;

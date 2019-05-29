@@ -1,9 +1,7 @@
 package com.gao.web;
 
 import com.gao.base.result.Result;
-import com.gao.base.result.ResultEnum;
-import com.gao.base.result.ResultFactory;
-import com.gao.entity.User;
+import com.gao.entity.po.User;
 import com.gao.service.ILoginService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

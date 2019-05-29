@@ -1,7 +1,7 @@
-package com.gao.dao;
+package com.gao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gao.entity.po.SkuSpec;
+import com.gao.entity.po.SpuGroup;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.gao.entity.po.SkuSpec;
  * @author gaosheng
  * @since 2019-05-29
  */
-public interface SkuSpecMapper extends BaseMapper<SkuSpec> {
+public interface SpuGroupMapper extends BaseMapper<SpuGroup> {
 
 }

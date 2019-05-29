@@ -1,7 +1,7 @@
 package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.dao.CategoryMapper;
+import com.gao.mapper.CategoryMapper;
 import com.gao.entity.po.Category;
 import com.gao.service.ICategoryService;
 import org.springframework.stereotype.Service;

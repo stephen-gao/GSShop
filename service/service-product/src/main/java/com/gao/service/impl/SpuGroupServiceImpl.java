@@ -1,7 +1,7 @@
 package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.dao.SpuGroupMapper;
+import com.gao.mapper.SpuGroupMapper;
 import com.gao.entity.po.SpuGroup;
 import com.gao.service.ISpuGroupService;
 import org.springframework.stereotype.Service;

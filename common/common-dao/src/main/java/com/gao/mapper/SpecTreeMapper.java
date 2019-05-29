@@ -1,7 +1,7 @@
-package com.gao.dao;
+package com.gao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gao.entity.po.Sku;
+import com.gao.entity.po.SpecTree;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.gao.entity.po.Sku;
  * @author gaosheng
  * @since 2019-05-29
  */
-public interface SkuMapper extends BaseMapper<Sku> {
+public interface SpecTreeMapper extends BaseMapper<SpecTree> {
 
 }

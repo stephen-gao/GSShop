@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gao.dao.SpecTreeMapper">
+<mapper namespace="com.gao.mapper.mapper.SkuSpecMapper">
 	<!--开启二级缓存-->
 	<!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
 
-	<resultMap id="BaseResultMap" type="com.gao.entity.po.SpecTree">
+	<resultMap id="BaseResultMap" type="com.gao.entity.po.SkuSpec">
 		<id column="id" property="id" />
+		<result column="sku_id" property="skuId" />
+		<result column="spec_tree_id" property="specTreeId" />
 		<result column="spec_name" property="specName" />
 		<result column="spec_value" property="specValue" />
-		<result column="parent_id" property="parentId" />
-		<result column="type" property="type" />
-		<result column="spec_flag" property="specFlag" />
 		<result column="sort" property="sort" />
 		<result column="gmt_create" property="gmtCreate" />
 		<result column="gmt_update" property="gmtUpdate" />
@@ -18,6 +17,6 @@
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id, spec_name AS specName, spec_value AS specValue, parent_id AS parentId, type, spec_flag AS specFlag, sort, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+        id, sku_id AS skuId, spec_tree_id AS specTreeId, spec_name AS specName, spec_value AS specValue, sort, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
     </sql>
 </mapper>

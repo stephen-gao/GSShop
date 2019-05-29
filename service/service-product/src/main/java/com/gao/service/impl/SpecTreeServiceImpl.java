@@ -1,7 +1,7 @@
 package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.dao.SpecTreeMapper;
+import com.gao.mapper.SpecTreeMapper;
 import com.gao.entity.po.SpecTree;
 import com.gao.service.ISpecTreeService;
 import org.springframework.stereotype.Service;

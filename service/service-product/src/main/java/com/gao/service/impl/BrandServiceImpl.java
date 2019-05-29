@@ -1,8 +1,9 @@
 package com.gao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gao.dao.BrandMapper;
+
 import com.gao.entity.po.Brand;
+import com.gao.mapper.BrandMapper;
 import com.gao.service.IBrandService;
 import org.springframework.stereotype.Service;
 

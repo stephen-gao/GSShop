@@ -48,7 +48,7 @@
                     <!-- 是否覆盖同名文件(默认false) -->
                     <fileOverride>true</fileOverride>
                     <!-- mapper.xml 中添加二级缓存配置(默认true) -->
-                    <enableCache>true</enableCache>
+                    <enableCache>false</enableCache>
                     <!-- 开发者名称 -->
                     <author>gaosheng</author>
                     <!-- 是否开启 ActiveRecord 模式(默认true) -->

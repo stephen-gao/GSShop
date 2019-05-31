@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gao.mapper.mapper.SpuMapper">
+	<!--开启二级缓存-->
+	<!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+	<resultMap id="BaseResultMap" type="com.gao.entity.po.Spu">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="sub_title" property="subTitle" />
+		<result column="describe" property="describe" />
+		<result column="category_id" property="categoryId" />
+		<result column="brand_id" property="brandId" />
+		<result column="brand" property="brand" />
+		<result column="country_id" property="countryId" />
+		<result column="country" property="country" />
+		<result column="banner" property="banner" />
+		<result column="state" property="state" />
+		<result column="gmt_create" property="gmtCreate" />
+		<result column="gmt_update" property="gmtUpdate" />
+	</resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        id, title, sub_title AS subTitle, describe, category_id AS categoryId, brand_id AS brandId, brand, country_id AS countryId, country, banner, state, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+    </sql>
+</ma

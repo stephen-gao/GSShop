@@ -1,4 +1,4 @@
-package com.gao.base.vo;
+package com.gao.entity.vo;
 
 import java.util.List;
 
@@ -16,28 +16,28 @@ public class BaseVO {
 
     private String DEFAULT_SORT_TYPE = "ASC";
 
-    private Long current;
+    private Long pageNum;
 
-    private Long size;
+    private Long pageSize;
 
     private List<String> sortList;
 
     private String sortType;
 
-    public Long getCurrent() {
-        return null == this.current ? this.DEFAULT_PAGE_NUM : this.current;
+    public Long getPageNum() {
+        return null == this.pageNum ? this.DEFAULT_PAGE_NUM : this.pageNum;
     }
 
-    public void setCurrent(Long current) {
-        this.current = current;
+    public void setPageNum(Long pageNum) {
+        this.pageNum = pageNum;
     }
 
-    public Long getSize() {
-        return null == this.size ? this.DEFAULT_PAGE_SIZE : this.size;
+    public Long getPageSize() {
+        return null == this.pageSize ? this.DEFAULT_PAGE_SIZE : this.pageSize;
     }
 
-    public void setSize(Long size) {
-        this.size = size;
+    public void setPageSize(Long pageSize) {
+        this.pageSize = pageSize;
     }
 
     public List<String> getSortList() {

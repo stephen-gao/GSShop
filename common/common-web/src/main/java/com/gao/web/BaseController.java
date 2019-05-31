@@ -3,7 +3,7 @@ package com.gao.web;
 import com.gao.base.result.Result;
 import com.gao.base.result.ResultEnum;
 import com.gao.base.result.ResultFactory;
-import com.gao.base.vo.BaseVO;
+import com.gao.entity.vo.BaseVO;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,6 +45,12 @@ public class BaseController {
         }
         matcher.appendTail(sb);
         return sb.toString();
+    }
+
+    @GetMapping("/notlogin")
+    @ResponseBody
+    public Result notlogin(){
+        return ResultFactory.getDefaultResult(ResultEnum.NOTLOGIN);
     }
 
     @GetMapping("/noAuthority")

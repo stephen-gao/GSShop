@@ -40,12 +40,12 @@ public class AuthorityInterceptor implements HandlerInterceptor {
         if(!StringUtils.isEmpty(token)){
             Object o = cache.get(userCacheKey + token);
             if(null != o){
-                logger.warn("有权限");
+                logger.warn("有登录，有权限");
                 return true;
             }
         }
-        logger.warn("无权限");
-        response.sendRedirect(contextPath+"/noAuthority");
+        logger.warn("未登录");
+        response.sendRedirect(contextPath+"/notlogin");
         return false;
     }
 

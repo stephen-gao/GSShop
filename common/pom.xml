@@ -14,7 +14,6 @@
 
     <modules>
         <module>common-dao</module>
-        <module>common-user</module>
         <module>common-entity</module>
         <module>common-base</module>
         <module>common-web</module>

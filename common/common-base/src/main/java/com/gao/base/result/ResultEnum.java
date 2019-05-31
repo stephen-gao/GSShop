@@ -8,9 +8,10 @@ package com.gao.base.result;
 public enum ResultEnum {
     SUCCESS(10000,"操作成功"),//成功
     FAIL(40000,"操作失败"),//失败
-    UNAUTHORIZED(40001,"未登录或登录超时"),//未认证（签名错误）
+    NOTLOGIN(40001,"未登录或登录超时"),//未认证（签名错误）
     PARAM_ERROR(40002,"传参有误"),//失败
     NOT_FOUND(40004,"接口不存在"),//接口不存在
+    UNAUTHORIZED(40005,"无权限"),
     INTERNAL_SERVER_ERROR(50000,"服务器错误");//服务器内部错误;
 
 

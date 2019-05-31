@@ -22,9 +22,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         InterceptorRegistration interceptorRegistration = registry.addInterceptor(authorityInterceptor);
-        interceptorRegistration.addPathPatterns("/user/**/*");
+        interceptorRegistration.addPathPatterns("/user/**");
         interceptorRegistration.addPathPatterns("/logout");
         interceptorRegistration.excludePathPatterns("/login");
+        interceptorRegistration.excludePathPatterns("/notlogin");
         interceptorRegistration.excludePathPatterns("/noAuthority");
         interceptorRegistration.excludePathPatterns("/register");
     }

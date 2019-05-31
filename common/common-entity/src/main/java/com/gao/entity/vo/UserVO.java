@@ -2,13 +2,14 @@ package com.gao.entity.vo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @Author gs
  * @Date created time 2019/5/28 14:26
  * @Description
  */
-public class UserVO  implements Serializable {
+public class UserVO extends BaseVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -57,14 +58,14 @@ public class UserVO  implements Serializable {
     private String salt;
 
     /**
-     * 创建时间
+     *
      */
-    private Long createTime;
+    private Date gmtCreate;
 
     /**
-     * 编辑时间
+     *
      */
-    private Long editTime;
+    private Date gmtUpdate;
 
     /**
      * 用户访问token
@@ -143,20 +144,20 @@ public class UserVO  implements Serializable {
         this.salt = salt;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public Long getEditTime() {
-        return editTime;
+    public Date getGmtUpdate() {
+        return gmtUpdate;
     }
 
-    public void setEditTime(Long editTime) {
-        this.editTime = editTime;
+    public void setGmtUpdate(Date gmtUpdate) {
+        this.gmtUpdate = gmtUpdate;
     }
 
     public String getToken() {

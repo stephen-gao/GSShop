@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * <p>
@@ -17,7 +18,7 @@ import java.math.BigDecimal;
  * @author gaosheng
  * @since 2019-05-27
  */
-@TableName("t_user")
+@TableName("m_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -86,17 +87,16 @@ public class User implements Serializable {
     private String salt;
 
     /**
-     * 创建时间
+     *
      */
-    @TableField(value = "create_time")
-    private Long createTime;
+    @TableField(value="gmt_create")
+    private Date gmtCreate;
 
     /**
-     * 编辑时间
+     *
      */
-    @TableField(value = "edit_time")
-    private Long editTime;
-
+    @TableField(value="gmt_update")
+    private Date gmtUpdate;
 
     public String getId() {
         return id;
@@ -194,19 +194,19 @@ public class User implements Serializable {
         this.salt = salt;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public Long getEditTime() {
-        return editTime;
+    public Date getGmtUpdate() {
+        return gmtUpdate;
     }
 
-    public void setEditTime(Long editTime) {
-        this.editTime = editTime;
+    public void setGmtUpdate(Date gmtUpdate) {
+        this.gmtUpdate = gmtUpdate;
     }
 }

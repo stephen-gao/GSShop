@@ -2,7 +2,7 @@
 server:
   port: 8892
   servlet:
-    context-path: /gsshop
+    context-path: /usermanage
 
 # 多环境配置文件激活属性
 spring:

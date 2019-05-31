@@ -77,8 +77,8 @@ public class LoginServiceImpl implements ILoginService{
             return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"用户名已存在");
         }
         Date date = new Date();
-        user.setCreateTime(date.getTime());
-        user.setEditTime(date.getTime());
+        user.setGmtCreate(date);
+        user.setGmtUpdate(date);
         String salt = SaltUtils.getSalt();
         user.setSalt(salt);
         String encrypt = MD5.encrypt(user.getPassword(),user.getUsername(),user.getSalt());

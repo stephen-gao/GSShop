@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : mysql
 Source Server Version : 80016
-Source Host           : 192.168.162.134:3306
+Source Host           : 192.168.139.129:3306
 Source Database       : gsshop
 
 Target Server Type    : MYSQL
 Target Server Version : 80016
 File Encoding         : 65001
 
-Date: 2019-05-31 21:56:52
+Date: 2019-06-01 14:49:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,20 +25,23 @@ CREATE TABLE `m_resource` (
   `name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `code` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `path` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '路由节点',
-  `page_path` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '页面位置',
   `component` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '布局',
   `icon` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `reqAuth` int(1) DEFAULT '0' COMMENT '是否判断权限',
-  `state` int(4) NOT NULL COMMENT '状态',
+  `type` int(4) NOT NULL COMMENT '类型0/root,1/中间、2叶子',
   `sort` int(4) DEFAULT NULL,
   `gmt_create` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `gmt_update` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=REDUNDANT;
 
 -- ----------------------------
 -- Records of m_resource
 -- ----------------------------
+INSERT INTO `m_resource` VALUES ('1', '0', 'root', 'root', null, null, null, '0', '0', '0', '2019-05-31 23:58:08', '2019-05-31 23:58:10');
+INSERT INTO `m_resource` VALUES ('2', '1', 'a', 'a', 'a', 'a', 'a', '0', '0', '5', '2019-05-31 23:50:51', '2019-05-31 23:50:51');
+INSERT INTO `m_resource` VALUES ('3', '2', 'a', 'a', 'a', 'a', 'a', '0', '0', '5', '2019-05-31 23:51:07', '2019-05-31 23:51:07');
+INSERT INTO `m_resource` VALUES ('4', '2', 'a', 'a', 'a', 'a', 'a', '0', '1', '5', '2019-06-01 00:13:27', '2019-06-01 00:13:27');
 
 -- ----------------------------
 -- Table structure for m_role
@@ -71,6 +74,38 @@ CREATE TABLE `m_role_resource` (
 
 -- ----------------------------
 -- Records of m_role_resource
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for m_sys_dic_item
+-- ----------------------------
+DROP TABLE IF EXISTS `m_sys_dic_item`;
+CREATE TABLE `m_sys_dic_item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
+  `code` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `type_code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ----------------------------
+-- Records of m_sys_dic_item
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for m_sys_dic_type
+-- ----------------------------
+DROP TABLE IF EXISTS `m_sys_dic_type`;
+CREATE TABLE `m_sys_dic_type` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sort` int(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ----------------------------
+-- Records of m_sys_dic_type
 -- ----------------------------
 
 -- ----------------------------

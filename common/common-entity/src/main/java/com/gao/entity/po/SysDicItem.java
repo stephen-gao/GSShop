@@ -43,6 +43,12 @@ public class SysDicItem implements Serializable {
 	private Integer sort;
 
 	/**
+	 *
+	 */
+	@TableField(value="type_id")
+	private String typeId;
+
+	/**
 	 * 
 	 */
 	@TableField(value="type_code")
@@ -87,5 +93,13 @@ public class SysDicItem implements Serializable {
 
 	public void setSort(Integer sort) {
 		this.sort = sort;
+	}
+
+	public String getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
 	}
 }

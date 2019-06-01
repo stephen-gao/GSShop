@@ -24,4 +24,6 @@ public interface ISysDicService {
 
     void delSysDicItem(String id);
 
+    List sysDicItemListByTypeId(String typeId);
+
 }

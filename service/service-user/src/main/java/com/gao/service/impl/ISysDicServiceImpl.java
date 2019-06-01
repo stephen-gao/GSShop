@@ -35,12 +35,16 @@ public class ISysDicServiceImpl implements ISysDicService {
 
     @Override
     public List sysDicTypeList() {
-        return sysDicTypeMapper.selectList(new QueryWrapper<>());
+        QueryWrapper<SysDicType> wrapper = new QueryWrapper<>();
+        wrapper.orderByAsc("sort");
+        return sysDicTypeMapper.selectList(wrapper);
     }
 
     @Override
     public List sysDicItemList() {
-        return sysDicItemMapper.selectList(new QueryWrapper<>());
+        QueryWrapper<SysDicItem> wrapper = new QueryWrapper<>();
+        wrapper.orderByAsc("sort");
+        return sysDicItemMapper.selectList(wrapper);
     }
 
     @Override
@@ -61,5 +65,13 @@ public class ISysDicServiceImpl implements ISysDicService {
     @Override
     public void delSysDicItem(String id) {
         sysDicItemMapper.deleteById(id);
+    }
+
+    @Override
+    public List sysDicItemListByTypeId(String typeId) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("type_id",typeId);
+        wrapper.orderByAsc("sort");
+        return sysDicItemMapper.selectList(wrapper);
     }
 }

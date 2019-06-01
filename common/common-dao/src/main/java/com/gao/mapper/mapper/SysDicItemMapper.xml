@@ -8,10 +8,11 @@
 		<result column="code" property="code" />
 		<result column="sort" property="sort" />
 		<result column="type_code" property="typeCode" />
+		<result column="type_id" property="typeId" />
 	</resultMap>
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id, name, code, type_code AS typeCode,sort
+        id, name, code,type_id AS typeId, type_code AS typeCode,sort
     </sql>
 </mapper>

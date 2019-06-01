@@ -3,8 +3,8 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.162.134:3306/easywork?allowMultiQueries=true&useSSL=false&characterEncoding=UTF-8
-    url: jdbc:mysql://192.168.139.129:3306/gsshop?allowMultiQueries=true&useSSL=false&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.162.134:3306/gsshop?allowMultiQueries=true&useSSL=false&characterEncoding=UTF-8
+#    url: jdbc:mysql://192.168.139.129:3306/gsshop?allowMultiQueries=true&useSSL=false&characterEncoding=UTF-8
     username: root
     password: Root
     initialSize: 5
@@ -15,8 +15,8 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
   redis:
     database: 0
-#    host: 192.168.162.134
-    host: 192.168.139.129
+    host: 192.168.162.134
+#    host: 192.168.139.129
     port: 6379
     password: redis
     pool:

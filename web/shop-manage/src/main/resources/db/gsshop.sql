@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql
+Source Server         : localhost
 Source Server Version : 80016
-Source Host           : 192.168.139.129:3306
+Source Host           : 192.168.162.134:3306
 Source Database       : gsshop
 
 Target Server Type    : MYSQL
 Target Server Version : 80016
 File Encoding         : 65001
 
-Date: 2019-06-01 14:49:08
+Date: 2019-06-02 00:00:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -82,15 +82,20 @@ CREATE TABLE `m_role_resource` (
 DROP TABLE IF EXISTS `m_sys_dic_item`;
 CREATE TABLE `m_sys_dic_item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `code` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `type_code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,
+  `type_id` bigint(20) NOT NULL,
+  `type_code` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sort` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Records of m_sys_dic_item
 -- ----------------------------
+INSERT INTO `m_sys_dic_item` VALUES ('1', '男', '0', '1', 'sys_gender', '0');
+INSERT INTO `m_sys_dic_item` VALUES ('2', '女', '1', '1', 'sys_gender', '1');
+INSERT INTO `m_sys_dic_item` VALUES ('3', '保密', '2', '1', 'sys_gender', '2');
 
 -- ----------------------------
 -- Table structure for m_sys_dic_type
@@ -98,15 +103,16 @@ CREATE TABLE `m_sys_dic_item` (
 DROP TABLE IF EXISTS `m_sys_dic_type`;
 CREATE TABLE `m_sys_dic_type` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,
+  `code` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `sort` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Records of m_sys_dic_type
 -- ----------------------------
+INSERT INTO `m_sys_dic_type` VALUES ('1', 'sys_gender', '性别', '1');
 
 -- ----------------------------
 -- Table structure for m_user

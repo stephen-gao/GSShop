@@ -25,7 +25,7 @@ public class Brand implements Serializable {
 	 * 
 	 */
 	@TableId(type = IdType.UUID)
-	private Long id;
+	private String id;
 
 	/**
 	 * 
@@ -61,12 +61,11 @@ public class Brand implements Serializable {
 	private Date gmtUpdate;
 
 
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

@@ -1,6 +1,8 @@
 package com.gao.entity.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
@@ -22,19 +24,20 @@ public class SpuGroupSpec implements Serializable {
 	/**
 	 * 
 	 */
-	private Long id;
+	@TableId(type = IdType.AUTO)
+	private String id;
 
 	/**
 	 * 
 	 */
 	@TableField(value="group_id")
-	private Long groupId;
+	private String groupId;
 
 	/**
 	 * 
 	 */
 	@TableField(value="spec_tree_id")
-	private Long specTreeId;
+	private String specTreeId;
 
 	/**
 	 * 
@@ -66,28 +69,27 @@ public class SpuGroupSpec implements Serializable {
 	private Date gmtUpdate;
 
 
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Long getGroupId() {
+	public String getGroupId() {
 		return groupId;
 	}
 
-	public void setGroupId(Long groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}
 
-	public Long getSpecTreeId() {
+	public String getSpecTreeId() {
 		return specTreeId;
 	}
 
-	public void setSpecTreeId(Long specTreeId) {
+	public void setSpecTreeId(String specTreeId) {
 		this.specTreeId = specTreeId;
 	}
 

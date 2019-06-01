@@ -35,7 +35,7 @@ public class Category implements Serializable {
 	 * 
 	 */
 	@TableField(value="parent_id")
-	private Long parentId;
+	private String parentId;
 
 	/**
 	 * 
@@ -72,11 +72,11 @@ public class Category implements Serializable {
 		this.categoryName = categoryName;
 	}
 
-	public Long getParentId() {
+	public String getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(Long parentId) {
+	public void setParentId(String parentId) {
 		this.parentId = parentId;
 	}
 

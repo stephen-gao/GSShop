@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gao.mapper.ResourceMapper">
+
+	<resultMap id="BaseResultMap" type="com.gao.entity.po.Resource">
+		<id column="id" property="id" />
+		<result column="parent_id" property="parentId" />
+		<result column="name" property="name" />
+		<result column="code" property="code" />
+		<result column="path" property="path" />
+		<result column="component" property="component" />
+		<result column="icon" property="icon" />
+		<result column="reqAuth" property="reqauth" />
+		<result column="state" property="state" />
+		<result column="sort" property="sort" />
+		<result column="gmt_create" property="gmtCreate" />
+		<result column="gmt_update" property="gmtUpdate" />
+	</resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        id, parent_id AS parentId, name, code, path, component, icon, reqAuth AS reqauth, state, sort, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+    </sql>
+</mapper>

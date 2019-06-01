@@ -1,6 +1,8 @@
 package com.gao.entity.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
@@ -22,7 +24,8 @@ public class Spu implements Serializable {
 	/**
 	 * id
 	 */
-	private Long id;
+	@TableId(type = IdType.AUTO)
+	private String id;
 
 	/**
 	 * 标题
@@ -44,13 +47,13 @@ public class Spu implements Serializable {
 	 * 分类ID
 	 */
 	@TableField(value="category_id")
-	private Long categoryId;
+	private String categoryId;
 
 	/**
 	 * 品牌ID
 	 */
 	@TableField(value="brand_id")
-	private Long brandId;
+	private String brandId;
 
 	/**
 	 * 品牌名称
@@ -61,7 +64,7 @@ public class Spu implements Serializable {
 	 * 产地国家ID
 	 */
 	@TableField(value="country_id")
-	private Long countryId;
+	private String countryId;
 
 	/**
 	 * 产地国家
@@ -91,12 +94,11 @@ public class Spu implements Serializable {
 	private Date gmtUpdate;
 
 
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -124,21 +126,7 @@ public class Spu implements Serializable {
 		this.describe = describe;
 	}
 
-	public Long getCategoryId() {
-		return categoryId;
-	}
 
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public Long getBrandId() {
-		return brandId;
-	}
-
-	public void setBrandId(Long brandId) {
-		this.brandId = brandId;
-	}
 
 	public String getBrand() {
 		return brand;
@@ -148,11 +136,27 @@ public class Spu implements Serializable {
 		this.brand = brand;
 	}
 
-	public Long getCountryId() {
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(String brandId) {
+		this.brandId = brandId;
+	}
+
+	public String getCountryId() {
 		return countryId;
 	}
 
-	public void setCountryId(Long countryId) {
+	public void setCountryId(String countryId) {
 		this.countryId = countryId;
 	}
 

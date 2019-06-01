@@ -1,6 +1,8 @@
 package com.gao.entity.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
@@ -22,13 +24,14 @@ public class SpuGroup implements Serializable {
 	/**
 	 * 
 	 */
-	private Long id;
+	@TableId(type = IdType.AUTO)
+	private String id;
 
 	/**
 	 * spu_id
 	 */
 	@TableField(value="spu_id")
-	private Long spuId;
+	private String spuId;
 
 	/**
 	 * 规格组名称
@@ -59,20 +62,19 @@ public class SpuGroup implements Serializable {
 	private Date gmtUpdate;
 
 
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Long getSpuId() {
+	public String getSpuId() {
 		return spuId;
 	}
 
-	public void setSpuId(Long spuId) {
+	public void setSpuId(String spuId) {
 		this.spuId = spuId;
 	}
 

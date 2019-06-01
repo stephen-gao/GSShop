@@ -14,10 +14,10 @@ import java.util.Date;
  * </p>
  *
  * @author gaosheng
- * @since 2019-05-29
+ * @since 2019-05-31
  */
-@TableName("t_spec_tree")
-public class SpecTree implements Serializable {
+@TableName("m_role")
+public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,33 +28,14 @@ public class SpecTree implements Serializable {
 	private String id;
 
 	/**
-	 * 规格名称
+	 * 
 	 */
-	@TableField(value="spec_name")
-	private String specName;
+	private String name;
 
 	/**
-	 * 规格值
+	 * 
 	 */
-	@TableField(value="spec_value")
-	private String specValue;
-
-	/**
-	 * 父节点
-	 */
-	@TableField(value="parent_id")
-	private String parentId;
-
-	/**
-	 * 区分sku/spu,0/spu,1/sku
-	 */
-	private Integer type;
-
-	/**
-	 * 是否是可选规格(叶子节点)标识
-	 */
-	@TableField(value="spec_flag")
-	private Integer specFlag;
+	private String description;
 
 	/**
 	 * 
@@ -82,44 +63,20 @@ public class SpecTree implements Serializable {
 		this.id = id;
 	}
 
-	public String getSpecName() {
-		return specName;
+	public String getName() {
+		return name;
 	}
 
-	public void setSpecName(String specName) {
-		this.specName = specName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getSpecValue() {
-		return specValue;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setSpecValue(String specValue) {
-		this.specValue = specValue;
-	}
-
-	public String getParentId() {
-		return parentId;
-	}
-
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-	}
-
-	public Integer getType() {
-		return type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
-	public Integer getSpecFlag() {
-		return specFlag;
-	}
-
-	public void setSpecFlag(Integer specFlag) {
-		this.specFlag = specFlag;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Integer getSort() {

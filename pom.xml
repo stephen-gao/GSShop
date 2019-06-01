@@ -56,7 +56,7 @@
                     <!-- 数据源配置，( **必配** ) -->
                     <dataSource>
                         <driverName>com.mysql.cj.jdbc.Driver</driverName>
-                        <url>jdbc:mysql://192.168.162.134:3306/easywork?allowMultiQueries=true&amp;useSSL=false&amp;characterEncoding=UTF-8</url>
+                        <url>jdbc:mysql://192.168.139.129:3306/gsshop?allowMultiQueries=true&amp;useSSL=false&amp;characterEncoding=UTF-8</url>
                         <username>root</username>
                         <password>Root</password>
                     </dataSource>
@@ -77,14 +77,8 @@
                         <superServiceClass>com.baomidou.mybatisplus.extension.service.IService</superServiceClass>
                         <!-- 要包含的表 与exclude 二选一配置-->
                         <include>
-                            <property>t_brand</property>
-                            <property>t_category</property>
-                            <property>t_sku</property>
-                            <property>t_sku_spec</property>
-                            <property>t_spec_tree</property>
-                            <property>t_spu</property>
-                            <property>t_spu_group</property>
-                            <property>t_spu_group_spec</property>
+                            <property>m_sys_dic_item</property>
+                            <property>m_sys_dic_type</property>
                         </include>
                         <!-- 要排除的表 -->
                         <!--<exclude>-->

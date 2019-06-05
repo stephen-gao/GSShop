@@ -22,35 +22,29 @@ public class ResourceHandleServiceImpl implements IResourceHandleService {
     public Result resourceTree() {
         List<Resource> resources = resourceService.list();
         ResourceVO root = new ResourceVO();
-        for (Resource r : resources) {
-            if ("0".equals(r.getParentId())) {
-                BeanUtils.copyProperties(r, root);
-            }
-        }
-        List<ResourceVO> child = new ArrayList<>();
-        ResourceVO node;
-        for (Resource r : resources) {
-            if (root.getId().equals(r.getParentId())) {
-                node = new ResourceVO();
-                BeanUtils.copyProperties(r, node);
-                child.add(node);
-            }
-        }
-        List<ResourceVO> child_2;
-        for (ResourceVO rv : child) {
-            child_2 = new ArrayList<>();
-            for(Resource r : resources){
-                if(rv.getId().equals(r.getParentId())){
-                    node = new ResourceVO();
-                    BeanUtils.copyProperties(r,node);
-                    child_2.add(node);
-                }
-            }
-            rv.setChildren(child_2);
-        }
-        root.setChildren(child);
+        root.setId("0");
+        root.setName("根节点");
+        root.setCode("root");
+        root = buildResTree(root,resources);
         List<ResourceVO> roots = new ArrayList<>();
         roots.add(root);
         return ResultFactory.getDataResult(roots);
+    }
+
+    private ResourceVO buildResTree(ResourceVO root, List<Resource> resources){
+        List<ResourceVO> children = new ArrayList<>();
+        ResourceVO child;
+        for (Resource r : resources) {
+            if (root.getId().equals(r.getParentId())) {
+                child = new ResourceVO();
+                BeanUtils.copyProperties(r, child);
+                if("0".equals(child.getType())){
+                    buildResTree(child,resources);
+                }
+                children.add(child);
+            }
+        }
+        root.setChildren(children);
+        return root;
     }
 }

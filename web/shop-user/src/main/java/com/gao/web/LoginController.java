@@ -45,10 +45,4 @@ public class LoginController {
         return loginService.logout(token);
     }
 
-    @PostMapping("/register")
-    public Result register(@RequestBody User po){
-        logger.info(po.getUsername() +" " + po.getPassword());
-        return loginService.register(po);
-    }
-
 }

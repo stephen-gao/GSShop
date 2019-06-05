@@ -49,24 +49,14 @@ public class Resource implements Serializable {
     private String path;
 
     /**
-     * 布局
-     */
-    private String component;
-
-    /**
      *
      */
     private String icon;
 
     /**
-     * 是否判断权限
+     * 类型 0/非叶子，1叶子节点
      */
-    private Integer reqauth;
-
-    /**
-     * 状态
-     */
-    private Integer state;
+    private String type;
 
     /**
      *
@@ -125,14 +115,6 @@ public class Resource implements Serializable {
         this.path = path;
     }
 
-    public String getComponent() {
-        return component;
-    }
-
-    public void setComponent(String component) {
-        this.component = component;
-    }
-
     public String getIcon() {
         return icon;
     }
@@ -141,20 +123,12 @@ public class Resource implements Serializable {
         this.icon = icon;
     }
 
-    public Integer getReqauth() {
-        return reqauth;
+    public String getType() {
+        return type;
     }
 
-    public void setReqauth(Integer reqauth) {
-        this.reqauth = reqauth;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Integer getSort() {

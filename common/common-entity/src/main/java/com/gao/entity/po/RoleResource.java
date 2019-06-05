@@ -38,6 +38,14 @@ public class RoleResource implements Serializable {
 	@TableField(value="resource_id")
 	private String resourceId;
 
+	/**
+	 *
+	 */
+	@TableField(value="resource_code")
+	private String resourceCode;
+
+
+
 
 	public String getId() {
 		return id;
@@ -61,5 +69,13 @@ public class RoleResource implements Serializable {
 
 	public void setResourceId(String resourceId) {
 		this.resourceId = resourceId;
+	}
+
+	public String getResourceCode() {
+		return resourceCode;
+	}
+
+	public void setResourceCode(String resourceCode) {
+		this.resourceCode = resourceCode;
 	}
 }

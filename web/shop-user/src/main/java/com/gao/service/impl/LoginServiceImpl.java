@@ -64,28 +64,4 @@ public class LoginServiceImpl implements ILoginService{
         return ResultFactory.getMessgaeResult(ResultEnum.SUCCESS,"退出成功");
     }
 
-    @Override
-    public Result register(User user) {
-        if(StringUtils.isBlank(user.getUsername())){
-            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"用户名不能为空");
-        }
-        if(StringUtils.isBlank(user.getPassword())){
-            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"密码不能为空");
-        }
-        User old = userService.selectByUserName(user.getUsername());
-        if(null != old && null != old.getId()){
-            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"用户名已存在");
-        }
-        Date date = new Date();
-        user.setGmtCreate(date);
-        user.setGmtUpdate(date);
-        String salt = SaltUtils.getSalt();
-        user.setSalt(salt);
-        String encrypt = MD5.encrypt(user.getPassword(),user.getUsername(),user.getSalt());
-        user.setPassword(encrypt);
-        logger.info("新建用户信息: [{}]", JSON.toJSONString(user));
-        userService.save(user);
-        logger.info("新建用户信息成功: [{}]",JSON.toJSONString(user));
-        return ResultFactory.getDefaultResult(ResultEnum.SUCCESS);
-    }
 }

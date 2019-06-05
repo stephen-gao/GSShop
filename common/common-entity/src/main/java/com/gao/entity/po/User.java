@@ -26,7 +26,7 @@ public class User implements Serializable {
     /**
      *
      */
-    @TableId(type = IdType.UUID)
+    @TableId(type = IdType.AUTO)
     private String id;
 
     /**
@@ -55,31 +55,14 @@ public class User implements Serializable {
     private String photo;
 
     /**
-     * 极光推送识别码
+     * 邮件
      */
-    @TableField(value = "register_id")
-    private String registerId;
-
-    /**
-     * 微信openId
-     */
-    @TableField(value = "open_id")
-    private String openId;
-
-    /**
-     * 余额
-     */
-    private BigDecimal balance;
-
-    /**
-     * vip 0/普通用户 1/v1
-     */
-    private Integer vip;
+    private String email;
 
     /**
      * 账号状态 0/正常 1/监控 2/异常 3/冻结 5/锁定 6/暂停 9/注销
      */
-    private Integer status;
+    private String state;
 
     /**
      * 盐值
@@ -146,44 +129,12 @@ public class User implements Serializable {
         this.photo = photo;
     }
 
-    public String getRegisterId() {
-        return registerId;
+    public String getState() {
+        return state;
     }
 
-    public void setRegisterId(String registerId) {
-        this.registerId = registerId;
-    }
-
-    public String getOpenId() {
-        return openId;
-    }
-
-    public void setOpenId(String openId) {
-        this.openId = openId;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public Integer getVip() {
-        return vip;
-    }
-
-    public void setVip(Integer vip) {
-        this.vip = vip;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getSalt() {
@@ -208,5 +159,13 @@ public class User implements Serializable {
 
     public void setGmtUpdate(Date gmtUpdate) {
         this.gmtUpdate = gmtUpdate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

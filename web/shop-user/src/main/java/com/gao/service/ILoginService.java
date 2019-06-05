@@ -15,5 +15,4 @@ public interface ILoginService {
 
     Result<UserVO> logout(String token);
 
-    Result register(User user);
 }

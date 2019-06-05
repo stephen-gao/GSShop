@@ -1,5 +1,6 @@
 package com.gao.web;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.gao.base.result.Result;
 import com.gao.base.result.ResultEnum;
@@ -25,6 +26,12 @@ public class SysDicController {
     public Result sysdicPage(@RequestBody SysDicVO vo){
         IPage page = sysDicService.sysDicTypePage(vo);
         return ResultFactory.getDataResult(page);
+    }
+
+    @GetMapping("sysdictree")
+    public Result sysDicTree(){
+        JSON tree = sysDicService.sysDicTree();
+        return ResultFactory.getDataResult(tree);
     }
 
     @PostMapping("adddictype")
@@ -54,6 +61,12 @@ public class SysDicController {
     @GetMapping("dicitemsbtypeid")
     public Result getDicItemsByTypeId(@RequestParam("typeId") String typeId){
         List list = sysDicService.sysDicItemListByTypeId(typeId);
+        return ResultFactory.getDataResult(list);
+    }
+
+    @GetMapping("dicitemsbtypeCode")
+    public Result getDicItemsByTypeCode(@RequestParam("typeCode") String typeCode){
+        List list = sysDicService.sysDicItemListByTypeCode(typeCode);
         return ResultFactory.getDataResult(list);
     }
 

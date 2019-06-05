@@ -1,5 +1,7 @@
 package com.gao.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -32,6 +34,25 @@ public class ISysDicServiceImpl implements ISysDicService {
         wrapper.orderByAsc("sort");
         return sysDicTypeMapper.selectPage(page,wrapper);
     }
+
+    @Override
+    public JSON sysDicTree() {
+        List<SysDicType> types = sysDicTypeMapper.selectList(new QueryWrapper());
+        List<SysDicItem> items = sysDicItemMapper.selectList(new QueryWrapper<>());
+        JSONObject root = new JSONObject();
+        JSONObject item;
+        for(SysDicType sdt : types){
+            item = new JSONObject();
+            for(SysDicItem sdi : items){
+                if(sdt.getId().equals(sdi.getTypeId())){
+                    item.put(sdi.getCode(),sdi.getName());
+                }
+            }
+            root.put(sdt.getCode(),item);
+        }
+        return root;
+    }
+
 
     @Override
     public List sysDicTypeList() {
@@ -71,6 +92,14 @@ public class ISysDicServiceImpl implements ISysDicService {
     public List sysDicItemListByTypeId(String typeId) {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("type_id",typeId);
+        wrapper.orderByAsc("sort");
+        return sysDicItemMapper.selectList(wrapper);
+    }
+
+    @Override
+    public List sysDicItemListByTypeCode(String typeCode) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("type_code",typeCode);
         wrapper.orderByAsc("sort");
         return sysDicItemMapper.selectList(wrapper);
     }

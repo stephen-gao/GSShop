@@ -23,7 +23,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public User selectByUserName(String username) {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("username",username);
-        wrapper.ne("status" ,9);
+        wrapper.ne("state" ,9);
         return this.getOne(wrapper);
     }
 }

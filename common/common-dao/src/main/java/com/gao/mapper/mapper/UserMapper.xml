@@ -11,11 +11,8 @@
 		<result column="nickname" property="nickname" />
 		<result column="tel" property="tel" />
 		<result column="photo" property="photo" />
-		<result column="register_id" property="registerId" />
-		<result column="open_id" property="openId" />
-		<result column="balance" property="balance" />
-		<result column="vip" property="vip" />
-		<result column="status" property="status" />
+		<result column="email" property="email" />
+		<result column="state" property="state" />
 		<result column="salt" property="salt" />
 		<result column="gmt_create" property="gmtCreate" />
 		<result column="gmt_update" property="gmtUpdate" />
@@ -23,6 +20,28 @@
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id, username, password, nickname, tel, photo, register_id AS registerId, open_id AS openId, balance, vip, status, salt, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+        u.id,
+		u.username,
+		u.nickname,
+		u.tel,
+		u.email,
+		u.state,
+		u.gmt_create AS gmtCreate,
+		u.gmt_update AS gmtUpdate
     </sql>
+	<!-- 通用sql select -->
+	<sql id="Base_Select">
+		SELECT
+	</sql>
+
+	<select id="pageList" resultType="com.gao.entity.vo.UserVO">
+		<include refid="Base_Select"/>
+		<include refid="Base_Column_List"/>
+		,ur.role_id AS roleId
+		FROM m_user u LEFT JOIN m_user_role ur ON u.id = ur.user_id
+		<where>
+			${ew.sqlSegment}
+		</where>
+		ORDER BY u.gmt_create DESC
+	</select>
 </mapper>

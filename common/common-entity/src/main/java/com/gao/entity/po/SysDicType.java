@@ -24,7 +24,7 @@ public class SysDicType implements Serializable {
 	 * 
 	 */
 	@TableId(type = IdType.AUTO)
-	private Long id;
+	private String id;
 
 	/**
 	 * 
@@ -41,13 +41,11 @@ public class SysDicType implements Serializable {
 	 */
 	private Integer sort;
 
-
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

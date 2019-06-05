@@ -32,24 +32,14 @@ public class ResourceVO {
     private String path;
 
     /**
-     * 布局
-     */
-    private String component;
-
-    /**
      *
      */
     private String icon;
 
     /**
-     * 是否判断权限
+     * 节点类型
      */
-    private Integer reqauth;
-
-    /**
-     * 状态
-     */
-    private Integer state;
+    private String type;
 
     /**
      *
@@ -108,14 +98,6 @@ public class ResourceVO {
         this.path = path;
     }
 
-    public String getComponent() {
-        return component;
-    }
-
-    public void setComponent(String component) {
-        this.component = component;
-    }
-
     public String getIcon() {
         return icon;
     }
@@ -124,20 +106,12 @@ public class ResourceVO {
         this.icon = icon;
     }
 
-    public Integer getReqauth() {
-        return reqauth;
+    public String getType() {
+        return type;
     }
 
-    public void setReqauth(Integer reqauth) {
-        this.reqauth = reqauth;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Integer getSort() {

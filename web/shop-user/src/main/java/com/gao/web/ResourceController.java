@@ -44,4 +44,27 @@ public class ResourceController {
         resourceService.save(resource);
         return ResultFactory.getDefaultResult(ResultEnum.SUCCESS);
     }
+
+    @PostMapping("edit")
+    public Result edit(@RequestBody Resource resource){
+        if(resource.getParentId() == null){
+            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"请选择父节点");
+        }
+        if(StringUtils.isBlank(resource.getCode())){
+            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"请输入节点编码");
+        }
+        if(StringUtils.isBlank(resource.getName())){
+            return ResultFactory.getMessgaeResult(ResultEnum.PARAM_ERROR,"请输入节点名称");
+        }
+        Date date = new Date();
+        resource.setGmtUpdate(date);
+        resourceService.updateById(resource);
+        return ResultFactory.getDefaultResult(ResultEnum.SUCCESS);
+    }
+
+    @GetMapping("del")
+    public Result add(@RequestParam String id){
+        resourceService.removeById(id);
+        return ResultFactory.getDefaultResult(ResultEnum.SUCCESS);
+    }
 }

@@ -23,6 +23,11 @@ public class UserVO extends BaseVO implements Serializable {
     private String username;
 
     /**
+     * 密码
+     */
+    private String password;
+
+    /**
      * 昵称
      */
     private String nickname;
@@ -38,19 +43,14 @@ public class UserVO extends BaseVO implements Serializable {
     private String photo;
 
     /**
-     * 余额
+     * 邮件
      */
-    private BigDecimal balance;
-
-    /**
-     * vip 0/普通用户 1/v1
-     */
-    private Integer vip;
+    private String email;
 
     /**
      * 账号状态 0/正常 1/监控 2/异常 3/冻结 5/锁定 6/暂停 9/注销
      */
-    private Integer status;
+    private String state;
 
     /**
      * 盐值
@@ -71,6 +71,8 @@ public class UserVO extends BaseVO implements Serializable {
      * 用户访问token
      */
     private String token;
+
+    private String roleId;
 
     public String getId() {
         return id;
@@ -112,28 +114,12 @@ public class UserVO extends BaseVO implements Serializable {
         this.photo = photo;
     }
 
-    public BigDecimal getBalance() {
-        return balance;
+    public String getState() {
+        return state;
     }
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public Integer getVip() {
-        return vip;
-    }
-
-    public void setVip(Integer vip) {
-        this.vip = vip;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getSalt() {
@@ -166,5 +152,29 @@ public class UserVO extends BaseVO implements Serializable {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

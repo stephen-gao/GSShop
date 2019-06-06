@@ -17,6 +17,25 @@
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id, parent_id AS parentId, name, code, path, icon, type, sort, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+        r.id,
+		r.parent_id AS parentId,
+		r.name,
+		r.code,
+		r.path,
+		r.icon,
+		r.type,
+		r.sort,
+		r.gmt_create AS gmtCreate,
+		r.gmt_update AS gmtUpdate
     </sql>
+	
+	<select id="getUserMenu" resultType="com.gao.entity.vo.ResourceVO">
+		SELECT
+			<include refid="Base_Column_List"/>
+		FROM
+			m_resource r
+		LEFT JOIN m_role_resource mrr ON r.id = mrr.resource_id
+		LEFT JOIN m_user_role mur ON mrr.role_id = mur.role_id
+		WHERE r.type = '0' AND mur.user_id = #{userId} ORDER BY sort ASC
+	</select>
 </mapper>

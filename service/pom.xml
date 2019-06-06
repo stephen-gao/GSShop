@@ -15,6 +15,7 @@
         <module>service-user</module>
         <module>service-redis</module>
         <module>service-product</module>
+        <module>service-customer</module>
     </modules>
 
 

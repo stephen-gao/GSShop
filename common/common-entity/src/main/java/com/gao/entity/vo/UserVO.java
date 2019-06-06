@@ -3,6 +3,7 @@ package com.gao.entity.vo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author gs
@@ -71,8 +72,15 @@ public class UserVO extends BaseVO implements Serializable {
      * 用户访问token
      */
     private String token;
-
+    /**
+     *
+     */
     private String roleId;
+
+    /**
+     *
+     */
+    private List<ResourceVO> menus;
 
     public String getId() {
         return id;
@@ -176,5 +184,13 @@ public class UserVO extends BaseVO implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<ResourceVO> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<ResourceVO> menus) {
+        this.menus = menus;
     }
 }

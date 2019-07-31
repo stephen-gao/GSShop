@@ -1,7 +1,9 @@
 package com.gao.entity.po;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
@@ -23,7 +25,8 @@ public class Category implements Serializable {
 	/**
 	 * id
 	 */
-	private Long id;
+	@TableId(type =  IdType.AUTO)
+	private String id;
 
 	/**
 	 * 分类名称
@@ -55,12 +58,11 @@ public class Category implements Serializable {
 	private Date gmtUpdate;
 
 
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

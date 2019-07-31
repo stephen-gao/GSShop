@@ -84,20 +84,20 @@ public class CustomerInfo implements Serializable {
 	/**
 	 * 
 	 */
-	@TableField(value="photo_small")
-	private String photoSmall;
+	@TableField(value="photo_sm")
+	private String photoSm;
 
 	/**
 	 * 
 	 */
-	@TableField(value="photo_mid")
-	private String photoMid;
+	@TableField(value="photo_md")
+	private String photoMd;
 
 	/**
 	 * 
 	 */
-	@TableField(value="photo_source")
-	private String photoSource;
+	@TableField(value="photo_src")
+	private String photoSrc;
 
 	/**
 	 * 余额
@@ -223,28 +223,28 @@ public class CustomerInfo implements Serializable {
 		this.birthday = birthday;
 	}
 
-	public String getPhotoSmall() {
-		return photoSmall;
+	public String getPhotoSm() {
+		return photoSm;
 	}
 
-	public void setPhotoSmall(String photoSmall) {
-		this.photoSmall = photoSmall;
+	public void setPhotoSm(String photoSm) {
+		this.photoSm = photoSm;
 	}
 
-	public String getPhotoMid() {
-		return photoMid;
+	public String getPhotoMd() {
+		return photoMd;
 	}
 
-	public void setPhotoMid(String photoMid) {
-		this.photoMid = photoMid;
+	public void setPhotoMd(String photoMd) {
+		this.photoMd = photoMd;
 	}
 
-	public String getPhotoSource() {
-		return photoSource;
+	public String getPhotoSrc() {
+		return photoSrc;
 	}
 
-	public void setPhotoSource(String photoSource) {
-		this.photoSource = photoSource;
+	public void setPhotoSrc(String photoSrc) {
+		this.photoSrc = photoSrc;
 	}
 
 	public BigDecimal getUserMoney() {

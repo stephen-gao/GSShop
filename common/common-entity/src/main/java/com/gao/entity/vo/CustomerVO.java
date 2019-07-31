@@ -83,17 +83,17 @@ public class CustomerVO extends BaseVO{
     /**
      *
      */
-    private String photoSmall;
+    private String photoSm;
 
     /**
      *
      */
-    private String photoMid;
+    private String photoMd;
 
     /**
      *
      */
-    private String photoSource;
+    private String photoSrc;
 
     /**
      * 余额
@@ -232,28 +232,28 @@ public class CustomerVO extends BaseVO{
         this.birthday = birthday;
     }
 
-    public String getPhotoSmall() {
-        return photoSmall;
+    public String getPhotoSm() {
+        return photoSm;
     }
 
-    public void setPhotoSmall(String photoSmall) {
-        this.photoSmall = photoSmall;
+    public void setPhotoSm(String photoSm) {
+        this.photoSm = photoSm;
     }
 
-    public String getPhotoMid() {
-        return photoMid;
+    public String getPhotoMd() {
+        return photoMd;
     }
 
-    public void setPhotoMid(String photoMid) {
-        this.photoMid = photoMid;
+    public void setPhotoMd(String photoMd) {
+        this.photoMd = photoMd;
     }
 
-    public String getPhotoSource() {
-        return photoSource;
+    public String getPhotoSrc() {
+        return photoSrc;
     }
 
-    public void setPhotoSource(String photoSource) {
-        this.photoSource = photoSource;
+    public void setPhotoSrc(String photoSrc) {
+        this.photoSrc = photoSrc;
     }
 
     public BigDecimal getUserMoney() {

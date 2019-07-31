@@ -24,7 +24,7 @@ public class Brand implements Serializable {
 	/**
 	 * 
 	 */
-	@TableId(type = IdType.UUID)
+	@TableId(type = IdType.AUTO)
 	private String id;
 
 	/**
@@ -36,17 +36,29 @@ public class Brand implements Serializable {
 	/**
 	 * 
 	 */
-	private String describe;
+	private String detail;
 
 	/**
 	 * 
 	 */
-	private String image;
+	@TableField(value="image_sm")
+	private String imageSm;
+
+	@TableField(value="image_md")
+	private String imageMd;
+
+	@TableField(value="image_src")
+	private String imageSrc;
 
 	/**
 	 * 
 	 */
 	private String letter;
+
+	/**
+	 *
+	 */
+	private Integer sort;
 
 	/**
 	 * 
@@ -77,20 +89,36 @@ public class Brand implements Serializable {
 		this.brandName = brandName;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getDetail() {
+		return detail;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 
-	public String getImage() {
-		return image;
+	public String getImageSm() {
+		return imageSm;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setImageSm(String imageSm) {
+		this.imageSm = imageSm;
+	}
+
+	public String getImageMd() {
+		return imageMd;
+	}
+
+	public void setImageMd(String imageMd) {
+		this.imageMd = imageMd;
+	}
+
+	public String getImageSrc() {
+		return imageSrc;
+	}
+
+	public void setImageSrc(String imageSrc) {
+		this.imageSrc = imageSrc;
 	}
 
 	public String getLetter() {
@@ -117,4 +145,11 @@ public class Brand implements Serializable {
 		this.gmtUpdate = gmtUpdate;
 	}
 
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
 }

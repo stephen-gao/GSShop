@@ -29,7 +29,7 @@
 		r.gmt_update AS gmtUpdate
     </sql>
 	
-	<select id="getUserMenu" resultType="com.gao.entity.vo.ResourceVO">
+	<select id="getUserMenu" parameterType="string" resultType="com.gao.entity.vo.ResourceVO">
 		SELECT
 			<include refid="Base_Column_List"/>
 		FROM

@@ -17,6 +17,8 @@
         <module>common-entity</module>
         <module>common-base</module>
         <module>common-web</module>
+        <module>common-service</module>
+        <module>common-redis</module>
     </modules>
 
 

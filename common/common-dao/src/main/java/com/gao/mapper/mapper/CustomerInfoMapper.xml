@@ -14,9 +14,9 @@
 		<result column="email" property="email" />
 		<result column="gender" property="gender" />
 		<result column="birthday" property="birthday" />
-		<result column="photo_small" property="photoSmall" />
-		<result column="photo_mid" property="photoMid" />
-		<result column="photo_source" property="photoSource" />
+		<result column="photo_sm" property="photoSm" />
+		<result column="photo_md" property="photoMd" />
+		<result column="photo_src" property="photoSrc" />
 		<result column="user_money" property="userMoney" />
 		<result column="user_point" property="userPoint" />
 		<result column="vip_level" property="vipLevel" />
@@ -27,6 +27,6 @@
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id, login_id AS loginId, username, nickname, tel, real_name AS realName, id_card_type AS idCardType, id_card_no AS idCardNo, email, gender, birthday, photo_small AS photoSmall, photo_mid AS photoMid, photo_source AS photoSource, user_money AS userMoney, user_point AS userPoint, vip_level AS vipLevel,state, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
+        id, login_id AS loginId, username, nickname, tel, real_name AS realName, id_card_type AS idCardType, id_card_no AS idCardNo, email, gender, birthday, photo_sm AS photoSm, photo_md AS photoMd, photo_src AS photoSrc, user_money AS userMoney, user_point AS userPoint, vip_level AS vipLevel,state, gmt_create AS gmtCreate, gmt_update AS gmtUpdate
     </sql>
 </mapper>

@@ -41,7 +41,7 @@ public class Spu implements Serializable {
 	/**
 	 * 描述
 	 */
-	private String describe;
+	private String description;
 
 	/**
 	 * 分类ID
@@ -82,6 +82,11 @@ public class Spu implements Serializable {
 	private Integer state;
 
 	/**
+	 * 商品类型，1普通商品、2新人商品、3活动商品（待续）
+	 */
+	private Integer type;
+
+	/**
 	 * 
 	 */
 	@TableField(value="gmt_create")
@@ -118,15 +123,13 @@ public class Spu implements Serializable {
 		this.subTitle = subTitle;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-
 
 	public String getBrand() {
 		return brand;
@@ -200,4 +203,11 @@ public class Spu implements Serializable {
 		this.gmtUpdate = gmtUpdate;
 	}
 
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
 }

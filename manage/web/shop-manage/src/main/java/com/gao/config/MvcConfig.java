@@ -19,6 +19,7 @@ public class MvcConfig implements WebMvcConfig{
         interceptorRegistration.addPathPatterns("/sysdic/**");
         interceptorRegistration.addPathPatterns("/role/**");
         interceptorRegistration.addPathPatterns("/customer/**");
+        interceptorRegistration.addPathPatterns("/spu/**");
         interceptorRegistration.addPathPatterns("/logout");
         interceptorRegistration.excludePathPatterns("/login");
         interceptorRegistration.excludePathPatterns("/notlogin");

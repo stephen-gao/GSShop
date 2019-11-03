@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gao.mapper.UserMapper">
+	<!--开启二级缓存-->
+	<!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+	<resultMap id="BaseResultMap" type="com.gao.entity.po.User">
+		<id column="id" property="id" />
+		<result column="username" property="username" />
+		<result column="password" property="password" />
+		<result column="nickname" property="nickname" />
+		<result column="tel" property="tel" />
+		<result column="photo" property="photo" />
+		<result column="email" property="email" />
+		<result column="state" property="state" />
+		<result column="salt" property="salt" />
+		<result column="gmt_create" property="gmtCreate" />
+		<result column="gmt_update" property="gmtUpdate" />
+	</resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        u.id,
+		u.username,
+		u.nickname,
+		u.tel,
+		u.email,
+		u.state,
+		u.gmt_create AS gmtCreate,
+		u.gmt_update AS gmtUpdate
+    </sql>
+	<!-- 通用sql select -->
+	<sql id="Base_Select">
+		SELECT
+	</sql>
+
+	<select id="pageList" resultType="com.gao.entity.vo.UserVO">
+		<include refid="Base_Select"/>
+		<include refid="Base_Column_List"/>
+		,ur.role_id AS roleId
+		FROM m_user u LEFT JOIN m_user_role ur ON u.id = ur.user_id
+		<where>
+			${ew.sqlSegment}
+		</where>
+		ORDER BY u.gmt_create DESC
+	</select>
+</mapper>

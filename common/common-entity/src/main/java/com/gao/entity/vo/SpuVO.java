@@ -29,7 +29,7 @@ public class SpuVO extends BaseVO{
     /**
      * 描述
      */
-    private String describe;
+    private String description;
 
     /**
      * 分类ID
@@ -62,9 +62,14 @@ public class SpuVO extends BaseVO{
     private String banner;
 
     /**
-     * 状态
+     * 状态 0下架，1上架
      */
     private Integer state;
+
+    /**
+     * 商品类型，1普通商品、2新人商品、3活动商品（待续）
+     */
+    private Integer type;
 
     /**
      *
@@ -100,12 +105,12 @@ public class SpuVO extends BaseVO{
         this.subTitle = subTitle;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategoryId() {
@@ -178,5 +183,13 @@ public class SpuVO extends BaseVO{
 
     public void setGmtUpdate(Date gmtUpdate) {
         this.gmtUpdate = gmtUpdate;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 }
